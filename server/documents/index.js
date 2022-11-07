@@ -1,7 +1,12 @@
+
 module.exports = ({ name,total, tax,planRate, discount ,planDuration,planName,ratePerDay,totalAplliances,securityDeposite,installionCharges,paymentLink}) => {
     const today = new Date();
+    const fonts = __dirname + '/Manrope-VariableFont_wght.ttf';
+    
+
     const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     const dis = discount==0?"none":"";
+    console.log(fonts);
     let offer=""
         switch(planDuration){
               case "Monthly":
@@ -19,7 +24,6 @@ module.exports = ({ name,total, tax,planRate, discount ,planDuration,planName,ra
              default:
                 break;          
     }
-    console.log(dis);
 const d = new Date();
 let nameOfMonth = month[d.getMonth()];
 return `
@@ -29,21 +33,16 @@ return `
           <meta charset="utf-8">
           <title>PDF Result Template</title>
           <style>
-          @font-face {
-            font-family: 'Manrope';
-            src: url('http://localhost:5000/Manrope.ttf') format('truetype') ;
-            font-weight: bold;
-    font-style: normal;
-          }
+    //      
           body{
             margin:0,
-            padding:0
+            padding:0,
+            font-family: 'Manrope';
           }
           @font-face {
-            font-family: 'Manrope-VariableFont_wght';
-            src: url('http://localhost:5000/Manrope.ttf') format('truetype') ;
-         
-            font-style: italic;
+            font-family: 'Manrope';
+            src: url(${__dirname+'/Manrope-VariableFont_wght.ttf'}) format('truetype') ;
+           
           }
           .pdf-container{
             background-color: #E5EAF5;
@@ -62,7 +61,7 @@ return `
            height: 44.71px;
         }
         .logoHeadding{
-            font-family: 'Manrope-VariableFont_wght';
+            font-family: 'Manrope';
         font-weight: lighter !important;
         font-size: 28px;
         line-height: 40px;
@@ -70,14 +69,14 @@ return `
         color: rgba(14, 17, 42, 0.7);
         }
         .logoSubHead{
-            font-family: 'Manrope-VariableFont_wght';
+            font-family: 'Manrope';
             font-weight: 800 !important;
             font-size: 28px;
             line-height: 40px;
             color: #0E112A;
         }
         .logoSubHeader{
-            font-family: 'Manrope-VariableFont_wght';
+            font-family: 'Manrope';
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -97,7 +96,7 @@ return `
             margin-bottom: 8%;
         }
         .name-pdf{
-            font-family: 'Manrope-VariableFont_wght';
+            font-family: 'Manrope';
         font-style: normal;
         font-weight: 800;
         font-size: 28px;
@@ -106,7 +105,7 @@ return `
         
         }
         .date-of-bill{
-            font-family: 'Manrope-VariableFont_wght';
+            font-family: 'Manrope';
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
@@ -114,7 +113,7 @@ return `
         color: rgba(14, 17, 42, 0.7);
         }
         .date-subHeading{
-            font-family: 'Manrope-VariableFont_wght';
+            font-family: 'Manrope';
         font-style: normal;
         font-weight: 400;
         font-size: 13px;
@@ -133,7 +132,7 @@ return `
         margin-bottom: 5%;
         }
         .pdf-plan-device{
-            font-family: 'Manrope-VariableFont_wght';
+            font-family: 'Manrope';
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
@@ -143,7 +142,7 @@ return `
         margin-bottom: 5%;
         }
         .plan-duration-pdf{
-            font-family: 'Manrope-VariableFont_wght';
+            font-family: 'Manrope';
         font-style: normal;
         font-weight: 700;
         font-size: 12px;
@@ -151,7 +150,7 @@ return `
         color: rgba(14, 17, 42, 0.7);
         }
         .plan-duration-offer-pdf{
-            font-family: 'Manrope-VariableFont_wght';
+            font-family: 'Manrope';
         font-style: normal;
         font-weight: 700;
         font-size: 12px;
@@ -162,7 +161,7 @@ return `
             padding: 4% 0;
         }
         .pdf-plan-detail{
-            font-family: 'Manrope-VariableFont_wght';
+            font-family: 'Manrope';
         font-style: normal;
         font-weight: 600;
         font-size: 14px;
@@ -170,7 +169,7 @@ return `
         color: rgba(14, 17, 42, 0.7);
         }
         .pdf-plan-detail-total{
-            font-family: 'Manrope-VariableFont_wght';
+            font-family: 'Manrope';
         font-style: normal;
         font-weight: 800;
         font-size: 16px;
@@ -195,7 +194,7 @@ return `
         filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.16));
         }
         .payment-amount{
-            font-family: 'Manrope-VariableFont_wght';
+            font-family: 'Manrope';
         font-style: normal;
         font-weight: 700;
         font-size: 16px;
