@@ -25,28 +25,25 @@ class App extends Component {
   createAndDownloadPdf = () => {
     axios.post('/create-pdf', this.state)
       .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
-      .then((res) => {
-        const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
-        saveAs(pdfBlob, `${this.state.name}.pdf`);
-      })
+      .then((res) => {})
+      .catch((a) => {console.log(a)})
   }
 
   render() {
     return (
       <div className="App">
-        <input type="text" placeholder="Name" name="name" onChange={this.handleChange}/>
-        <input type="text" placeholder="planName" name="planName" onChange={this.handleChange} />
-        <input type="number" placeholder="ratePerDay" name="ratePerDay" onChange={this.handleChange} />
-        <input type="number" placeholder="totalAplliances" name="totalAplliances" onChange={this.handleChange} />
-        <input type="text" placeholder="planDuration" name="planDuration" onChange={this.handleChange} />
-        <input type="number" placeholder="planRate" name="planRate" onChange={this.handleChange} />
-        <input type="number" placeholder="securityDeposite" name="securityDeposite" onChange={this.handleChange} />
-        <input type="number" placeholder="installionCharges" name="installionCharges" onChange={this.handleChange} />
-        <input type="number" placeholder="discount" name="discount" onChange={this.handleChange} />
-        <input type="number" placeholder="tax" name="tax" onChange={this.handleChange} />
-        <input type="number" placeholder="total" name="total" onChange={this.handleChange} /> 
-        <input type="text" placeholder="paymentLink" name="paymentLink" onChange={this.handleChange} />
-        
+        <input type="text" placeholder="Name" name="name" onChange={this.handleChange}/> <br />
+        <input type="text" placeholder="planName" name="planName" onChange={this.handleChange} /> <br />
+        <input type="number" placeholder="ratePerDay" name="ratePerDay" onChange={this.handleChange} /> <br />
+        <input type="number" placeholder="totalAplliances" name="totalAplliances" onChange={this.handleChange} /> <br />
+        <input type="text" placeholder="planDuration" name="planDuration" onChange={this.handleChange} /> <br />
+        <input type="number" placeholder="planRate" name="planRate" onChange={this.handleChange} /> <br />
+        <input type="number" placeholder="securityDeposite" name="securityDeposite" onChange={this.handleChange} /> <br />
+        <input type="number" placeholder="installionCharges" name="installionCharges" onChange={this.handleChange} /> <br />
+        <input type="number" placeholder="discount" name="discount" onChange={this.handleChange} /> <br />
+        <input type="number" placeholder="tax" name="tax" onChange={this.handleChange} /> <br />
+        <input type="number" placeholder="total" name="total" onChange={this.handleChange} />  <br />
+        <input type="text" placeholder="paymentLink" name="paymentLink" onChange={this.handleChange} /> <br /> 
         <button onClick={this.createAndDownloadPdf}>Download PDF</button>
       </div>
     );
