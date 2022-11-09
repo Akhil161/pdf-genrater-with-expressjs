@@ -288,7 +288,7 @@ module.exports = ({
                 <div class='total-rate'><span class='pdf-plan-detail-total'>Total Bill</span><span style="float:right">₹
                         ${total}</span></div>
             </div>
-            <a id="link" href="">
+            <a id="link" href=${paymentLink}>
                 <div class='payment-button-container'>
                     <span class='payment-amount'>Pay ₹ ${total}</span>
                 </div>
