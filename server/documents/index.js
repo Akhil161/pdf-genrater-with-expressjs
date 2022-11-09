@@ -46,14 +46,16 @@ module.exports = ({
         <meta charset="utf-8">
         <title>PDF Result Template</title>
         <style>
+       // @import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
             @font-face {
                 font-family: 'Manrope';
                 src: url("http://localhost:5000/Manrope-VariableFont_wght.ttf") format('truetype');
+            
             }
             body {
                 margin: 0;
                 padding: 0;
-                font-family: 'Manrope';
+    
             }
     
          
@@ -66,28 +68,34 @@ module.exports = ({
             .top-container-pdf {
                 position: relative;
                 background: #FFFFFF;
+                padding-left:5%;
             }
     
             .logoPdf {
                 margin-top: 15%;
                 width: 50.01px;
                 height: 44.71px;
+                
             }
     
             .logoHeadding {
                 font-family: 'Manrope';
+                font-style:normal;
                 font-weight: lighter !important;
                 font-size: 28px;
                 line-height: 40px;
                 color: rgba(14, 17, 42, 0.7);
+
             }
     
             .logoSubHead {
                 font-family: 'Manrope';
+                font-style:normal;
                 font-weight: 800 !important;
                 font-size: 28px;
                 line-height: 40px;
                 color: #0E112A;
+    
             }
     
             .logoSubHeader {
@@ -131,12 +139,13 @@ module.exports = ({
                 line-height: 20px;
                 color: rgba(14, 17, 42, 0.7);
             }
-    
+            
             .date-subHeading {
                 font-family: 'Manrope';
                 font-style: normal;
                 font-weight: 400;
                 font-size: 13px;
+                
                 line-height: 18px;
                 color: rgba(14, 17, 42, 0.7);
     
@@ -188,7 +197,7 @@ module.exports = ({
     
             .pdf-plan-detail {
                 font-family: 'Manrope';
-                font-style: normal;
+                 font-style: normal;
                 font-weight: 600;
                 font-size: 14px;
                 line-height: 20px;
@@ -246,7 +255,7 @@ module.exports = ({
         <div class='pdf-container' ref={ref}>
             <div class='top-container-pdf'>
                 <img class="logoPdf" src="http://localhost:5000/logoPdf.png" alt='pdf-logo' />
-                <div>
+                <div class="logo-head">
                     <span class='logoHeadding'>Welcome to</span> <br />
                     <span class='logoSubHead'>Aliste</span>
                 </div>

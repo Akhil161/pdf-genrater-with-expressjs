@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const pdf = require('html-pdf');
 const cors = require('cors');
 var options = {
-    height: "640px",
+    height: "610px",
     width: "300px",
     border: "0",
     paginationOffset: 0
